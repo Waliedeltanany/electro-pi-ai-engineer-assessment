@@ -1,0 +1,374 @@
+(.venv) PS C:\Users\tanan\OneDrive\Desktop\Food_Delivery_Agent> python agent.py console
+    Agents   Starting console mode 🚀
+              
+    06:14:06.310 DEBUG    asyncio            Using proactor: IocpProactor  
+    06:14:06.321 DEBUG    livekit.agents     no system trust store found, setting SSL_CERT_FILE to the certifi bundle  
+    06:14:06.322 INFO     livekit.agents     starting worker {"version": "1.6.6", "rtc-version": "1.1.13"}
+    06:14:06.333 INFO     livekit.agents     HTTP server listening on :63820  
+    06:14:06.503 WARNING  livekit.agents     no warmed process available for job, waiting for one to be created  
+                                         {"job_id": "mock-job-c1455a41abcc"}
+    06:14:06.514 INFO     livekit.agents     initializing job runner {"tid": 29140}
+    06:14:06.515 DEBUG    asyncio            Using proactor: IocpProactor  
+    06:14:06.516 INFO     livekit.agents     job runner initialized {"tid": 29140, "elapsed_time": 0.0}
+    06:14:06.750 WARNING  livekit.agents     metrics_collected is deprecated. Use session_usage_updated for usage         
+                                             tracking and ChatMessage.metrics for per-turn latency.                       
+                                         {"room": "console"}
+    06:14:06.753 INFO     livekit.agents     adaptive interruption detector initialized  
+                                         {"base_url": "https://agent-gateway.livekit.cloud/v1", "detection_interval": 0.1,
+"audio_prefix_duration": 1.0, "max_audio_duration": 3, "min_frames": 2, "threshold": null, "inference_timeout": 0.7, 
+"room": "console"}
+    06:14:06.756 DEBUG    livekit.agents     http_session(): creating a new httpclient ctx {"room": "console"}
+    06:14:07.546 DEBUG    livekit.agents     using audio io: `Console` -> `AgentSession` -> `TranscriptSynchronizer` ->   
+                                             `AudioSinkProxy` -> `Console`                                                
+                                         {"room": "console"}
+    06:14:07.549 DEBUG    livekit.agents     using transcript io: `AgentSession` -> `TranscriptSynchronizer`  
+                                         {"room": "console"}
+    06:14:08.241 DEBUG    livekit.agents     audio turn detector initialized  
+                                         {"model": "turn-detector-v1", "thresholds": {"tr": 0.65, "id": 0.47, "ko": 0.695,
+"de": 0.495, "ar": 0.355, "en": 0.56, "nl": 0.75, "pt": 0.665, "zh": 0.59, "es": 0.59, "fr": 0.575, "ja": 0.37, "it": 
+0.64, "hi": 0.575}, "default_threshold": 0.56, "overrides": null, "room": "console"}
+    06:14:08.254 DEBUG    livekit.agents     adaptive interruption session created  
+                                         {"default_threshold": 0.656, "effective_threshold": 0.656, "user_override": 
+false, "room": "console"}
+    06:14:08.942 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "openai/gpt-4.1-mini", "model_provider": "livekit", "ttft": 1.59, 
+"prompt_tokens": 481, "prompt_cached_tokens": 0, "completion_tokens": 14, "tokens_per_second": 7.73, "room": "console"}
+    06:14:09.265 DEBUG    livekit.agents     aec warmup active, disabling interruptions for 3.00s {"room": "console"}
+    06:14:09.983 INFO     livekit.agents     TTS metrics  
+                                         {"model_name": "cartesia/sonic-3", "model_provider": "livekit", "ttfb": 
+0.2980054000072414, "audio_duration": 3.66, "room": "console"}
+    06:14:12.266 DEBUG    livekit.agents     aec warmup expired, re-enabling interruptions {"room": "console"}
+    06:14:12.676 INFO     livekit.agents     Interruption metrics  
+                                         {"model_name": "adaptive interruption", "model_provider": "livekit", 
+"total_duration": 0.0, "prediction_duration": 0.0, "detection_delay": 0.0, "num_interruptions": 0, "num_backchannels": 1, 
+"num_requests": 3, "room": "console"}
+    06:14:13.066 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "Hello! How can I assist you with your food order 
+today?", "room": "console"}
+    06:14:26.118 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Where is my order one zero zero two?", "language": "en", 
+"transcript_delay": 0.49203062057495117, "room": "console"}
+    06:14:26.254 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.9417487382888794, "unlikely_threshold": 0.56, 
+"endpointing_delay": 0.3, "language": "en", "trigger": "stt", "from_cache": false, "room": "console"}
+    06:14:26.423 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1784690066.118488, "last_final_transcript_time": 
+1784690066.1226165, "speech_start_time": 1784690052.3183033, "delay_completed": true, "source": "stt", 
+"end_of_turn_probability": 0.9417487382888794, "unlikely_threshold": 0.56, "room": "console"}
+    06:14:26.430 DEBUG    livekit.agents     using preemptive generation  
+                                         {"preemptive_lead_time": 0.30764245986938477, "room": "console"}
+    06:14:26.439 INFO     livekit.agents     EOU metrics  
+                                         {"model_name": "turn-detector-v1", "model_provider": "livekit", 
+"end_of_utterance_delay": 0.3, "transcription_delay": 0.0, "room": "console"}
+    06:14:26.447 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "user", "text": "Where is my order one zero zero two?", "room": 
+"console"}
+    06:14:27.609 DEBUG    livekit.agents     executing tool  
+                                         {"function": "get_order_status", "arguments": "{\"order_id\": \"1002\"}", 
+"speech_id": "speech_c4868fb6acee", "room": "console"}
+    06:14:27.612 INFO     basic-agent        Checking order 1002 {"room": "console"}
+    06:14:27.629 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "openai/gpt-4.1-mini", "model_provider": "livekit", "ttft": 1.39, 
+"prompt_tokens": 496, "prompt_cached_tokens": 0, "completion_tokens": 17, "tokens_per_second": 11.3, "room": "console"}
+    06:14:27.635 DEBUG    livekit.agents     tools execution completed  
+                                         {"speech_id": "speech_c4868fb6acee", "room": "console"}
+    06:14:27.819 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "google/gemma-4-31b-it", "model_provider": "livekit", "ttft": 
+1.37, "prompt_tokens": 768, "prompt_cached_tokens": 640, "completion_tokens": 29, "tokens_per_second": 21.2, "room": 
+"console"}
+    06:14:29.156 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "openai/gpt-4.1-mini", "model_provider": "livekit", "ttft": 1.1, 
+"prompt_tokens": 543, "prompt_cached_tokens": 0, "completion_tokens": 30, "tokens_per_second": 19.78, "room": "console"}
+    06:14:31.136 INFO     livekit.agents     TTS metrics  
+                                         {"model_name": "cartesia/sonic-3", "model_provider": "livekit", "ttfb": 
+0.3087299000035273, "audio_duration": 7.88, "room": "console"}
+    06:14:36.983 INFO     livekit.agents     Interruption metrics  
+                                         {"model_name": "adaptive interruption", "model_provider": "livekit", 
+"total_duration": 0.28, "prediction_duration": 0.02, "detection_delay": 0.45, "num_interruptions": 0, "num_backchannels": 
+1, "num_requests": 6, "room": "console"}
+    06:14:37.366 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "Your order 1002 from KFC is on the way and should 
+arrive in about 10 minutes. Can I help you with anything else?", "room": "console"}
+    06:14:37.373 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Okay.", "language": "en", "transcript_delay": 
+0.6467232704162598, "room": "console"}
+    06:14:37.435 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.04013773798942566, "unlikely_threshold": 0.56, 
+"endpointing_delay": 2.5, "language": "en", "trigger": "stt", "from_cache": false, "room": "console"}
+    06:14:40.917 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Can you check order one zero zero two?", "language": "en", 
+"transcript_delay": 0.4945077896118164, "room": "console"}
+    06:14:40.978 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.9880719184875488, "unlikely_threshold": 0.56, 
+"endpointing_delay": 0.3, "language": "en", "trigger": "stt", "from_cache": false, "room": "console"}
+    06:14:41.222 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1784690080.9178069, "last_final_transcript_time": 
+1784690080.9219272, "speech_start_time": 1784690076.3130481, "delay_completed": true, "source": "stt", 
+"end_of_turn_probability": 0.9880719184875488, "unlikely_threshold": 0.56, "room": "console"}
+    06:14:41.228 DEBUG    livekit.agents     using preemptive generation  
+                                         {"preemptive_lead_time": 0.30648374557495117, "room": "console"}
+    06:14:41.232 INFO     livekit.agents     EOU metrics  
+                                         {"model_name": "turn-detector-v1", "model_provider": "livekit", 
+"end_of_utterance_delay": 0.3, "transcription_delay": 0.0, "room": "console"}
+    06:14:41.235 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "user", "text": "Okay. Can you check order one zero zero two?", "room": 
+"console"}
+    06:14:42.338 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "google/gemma-4-31b-it", "model_provider": "livekit", "ttft": 1.1,
+"prompt_tokens": 818, "prompt_cached_tokens": 704, "completion_tokens": 48, "tokens_per_second": 43.67, "room": "console"}
+    06:14:42.598 DEBUG    livekit.agents     executing tool  
+                                         {"function": "get_order_status", "arguments": "{\"order_id\": \"1002\"}", 
+"speech_id": "speech_c124318f3912", "room": "console"}
+    06:14:42.609 INFO     basic-agent        Checking order 1002 {"room": "console"}
+    06:14:42.612 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "openai/gpt-4.1-mini", "model_provider": "livekit", "ttft": 1.58, 
+"prompt_tokens": 591, "prompt_cached_tokens": 0, "completion_tokens": 17, "tokens_per_second": 10.07, "room": "console"}
+    06:14:42.624 DEBUG    livekit.agents     tools execution completed  
+                                         {"speech_id": "speech_c124318f3912", "room": "console"}
+    06:14:44.163 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "openai/gpt-4.1-mini", "model_provider": "livekit", "ttft": 1.0, 
+"prompt_tokens": 638, "prompt_cached_tokens": 0, "completion_tokens": 32, "tokens_per_second": 20.99, "room": "console"}
+    06:14:46.090 INFO     livekit.agents     TTS metrics  
+                                         {"model_name": "cartesia/sonic-3", "model_provider": "livekit", "ttfb": 
+0.33408570000028703, "audio_duration": 6.81, "room": "console"}
+    06:14:51.266 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "Order 1002 from KFC is still on the way with an 
+estimated delivery time of 10 minutes. Let me know if you need anything else!", "room": "console"}
+    06:14:54.217 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Show me the menu.", "language": "en", "transcript_delay": 
+0.4935126304626465, "room": "console"}
+    06:14:54.373 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.545862078666687, "unlikely_threshold": 0.56, 
+"endpointing_delay": 2.5, "language": "en", "trigger": "stt", "from_cache": false, "room": "console"}
+    06:14:55.380 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "openai/gpt-4.1-mini", "model_provider": "livekit", "ttft": 1.13, 
+"prompt_tokens": 682, "prompt_cached_tokens": 0, "completion_tokens": 10, "tokens_per_second": 8.64, "room": "console"}
+    06:14:56.721 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1784690094.2170472, "last_final_transcript_time": 
+1784690094.2213473, "speech_start_time": 1784690092.716451, "delay_completed": true, "source": "stt", 
+"end_of_turn_probability": 0.545862078666687, "unlikely_threshold": 0.56, "room": "console"}
+    06:14:56.727 DEBUG    livekit.agents     using preemptive generation  
+                                         {"preemptive_lead_time": 2.505805253982544, "room": "console"}
+    06:14:56.730 INFO     livekit.agents     EOU metrics  
+                                         {"model_name": "turn-detector-v1", "model_provider": "livekit", 
+"end_of_utterance_delay": 2.5, "transcription_delay": 0.0, "room": "console"}
+    06:14:56.733 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "user", "text": "Show me the menu.", "room": "console"}
+    06:14:56.738 DEBUG    livekit.agents     executing tool  
+                                         {"function": "show_menu", "arguments": "{}", "speech_id": "speech_78a7d702d890", 
+"room": "console"}
+    06:14:56.742 DEBUG    livekit.agents     tools execution completed  
+                                         {"speech_id": "speech_78a7d702d890", "room": "console"}
+    06:14:58.115 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "google/gemma-4-31b-it", "model_provider": "livekit", "ttft": 
+1.38, "prompt_tokens": 864, "prompt_cached_tokens": 704, "completion_tokens": 29, "tokens_per_second": 21.04, "room": 
+"console"}
+    06:14:58.238 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "openai/gpt-4.1-mini", "model_provider": "livekit", "ttft": 1.24, 
+"prompt_tokens": 731, "prompt_cached_tokens": 0, "completion_tokens": 22, "tokens_per_second": 14.74, "room": "console"}
+    06:14:59.789 INFO     livekit.agents     TTS metrics  
+                                         {"model_name": "cartesia/sonic-3", "model_provider": "livekit", "ttfb": 
+0.29821749999246094, "audio_duration": 5.89, "room": "console"}
+    06:15:04.465 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "Today's menu includes Burger, Pizza, Chicken, 
+Fries, and Coke. What would you like to order?", "room": "console"}
+    06:15:06.914 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Burgers.", "language": "en", "transcript_delay": 
+0.48886680603027344, "room": "console"}
+    06:15:07.082 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.6346820592880249, "unlikely_threshold": 0.56, 
+"endpointing_delay": 0.3, "language": "en", "trigger": "stt", "from_cache": false, "room": "console"}
+    06:15:07.217 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1784690106.9143114, "last_final_transcript_time": 
+1784690106.9167717, "speech_start_time": 1784690105.2160316, "delay_completed": true, "source": "stt", 
+"end_of_turn_probability": 0.6346820592880249, "unlikely_threshold": 0.56, "room": "console"}
+    06:15:07.238 DEBUG    livekit.agents     using preemptive generation  
+                                         {"preemptive_lead_time": 0.3215179443359375, "room": "console"}
+    06:15:07.242 INFO     livekit.agents     EOU metrics  
+                                         {"model_name": "turn-detector-v1", "model_provider": "livekit", 
+"end_of_utterance_delay": 0.3, "transcription_delay": 0.0, "room": "console"}
+    06:15:07.254 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "user", "text": "Burgers.", "room": "console"}
+    06:15:08.228 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "google/gemma-4-31b-it", "model_provider": "livekit", "ttft": 
+0.96, "prompt_tokens": 897, "prompt_cached_tokens": 768, "completion_tokens": 48, "tokens_per_second": 49.73, "room": 
+"console"}
+    06:15:08.628 DEBUG    livekit.agents     executing tool  
+                                         {"function": "place_order", "arguments": "{\"item_name\": \"Burger\", 
+\"quantity\": 1}", "speech_id": "speech_133fbc4226d2", "room": "console"}
+    06:15:08.640 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "openai/gpt-4.1-mini", "model_provider": "livekit", "ttft": 1.43, 
+"prompt_tokens": 764, "prompt_cached_tokens": 0, "completion_tokens": 19, "tokens_per_second": 11.03, "room": "console"}
+    06:15:08.644 DEBUG    livekit.agents     tools execution completed  
+                                         {"speech_id": "speech_133fbc4226d2", "room": "console"}
+    06:15:09.944 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "openai/gpt-4.1-mini", "model_provider": "livekit", "ttft": 1.05, 
+"prompt_tokens": 805, "prompt_cached_tokens": 0, "completion_tokens": 22, "tokens_per_second": 16.98, "room": "console"}
+    06:15:11.313 INFO     livekit.agents     TTS metrics  
+                                         {"model_name": "cartesia/sonic-3", "model_provider": "livekit", "ttfb": 
+0.3106186999939382, "audio_duration": 4.59, "room": "console"}
+    06:15:14.765 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "I've added 1 Burger to your order. Would you like 
+to add more items or proceed to checkout?", "room": "console"}
+    06:15:17.716 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Add another one burger.", "language": "en", 
+"transcript_delay": 0.040784358978271484, "room": "console"}
+    06:15:19.120 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "And one Coke", "language": "en", "transcript_delay": 
+0.4949986934661865, "room": "console"}
+    06:15:19.286 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.14752835035324097, "unlikely_threshold": 0.56, 
+"endpointing_delay": 2.5, "language": "en", "trigger": "stt", "from_cache": false, "room": "console"}
+    06:15:20.814 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "and one chicken.", "language": "en", "transcript_delay": 
+0.49098896980285645, "room": "console"}
+    06:15:20.879 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.5742396712303162, "unlikely_threshold": 0.56, 
+"endpointing_delay": 0.3, "language": "en", "trigger": "stt", "from_cache": false, "room": "console"}
+    06:15:21.115 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1784690120.8145554, "last_final_transcript_time": 
+1784690120.8186693, "speech_start_time": 1784690115.5120075, "delay_completed": true, "source": "stt", 
+"end_of_turn_probability": 0.5742396712303162, "unlikely_threshold": 0.56, "room": "console"}
+    06:15:21.120 DEBUG    livekit.agents     using preemptive generation  
+                                         {"preemptive_lead_time": 0.3020329475402832, "room": "console"}
+    06:15:21.126 INFO     livekit.agents     EOU metrics  
+                                         {"model_name": "turn-detector-v1", "model_provider": "livekit", 
+"end_of_utterance_delay": 0.3, "transcription_delay": 0.0, "room": "console"}
+    06:15:21.129 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "user", "text": "Add another one burger. And one Coke and one chicken.",
+"room": "console"}
+    06:15:22.147 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "google/gemma-4-31b-it", "model_provider": "livekit", "ttft": 
+1.01, "prompt_tokens": 940, "prompt_cached_tokens": 832, "completion_tokens": 48, "tokens_per_second": 47.38, "room": 
+"console"}
+    06:15:22.487 DEBUG    livekit.agents     executing tool  
+                                         {"function": "place_order", "arguments": "{\"item_name\": \"Burger\", 
+\"quantity\": 1}", "speech_id": "speech_7545b703e963", "room": "console"}
+    06:15:22.618 DEBUG    livekit.agents     executing tool  
+                                         {"function": "place_order", "arguments": "{\"item_name\": \"Coke\", \"quantity\":
+1}", "speech_id": "speech_7545b703e963", "room": "console"}
+    06:15:22.625 DEBUG    livekit.agents     executing tool  
+                                         {"function": "place_order", "arguments": "{\"item_name\": \"Chicken\", 
+\"quantity\": 1}", "speech_id": "speech_7545b703e963", "room": "console"}
+    06:15:22.629 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "openai/gpt-4.1-mini", "model_provider": "livekit", "ttft": 1.67, 
+"prompt_tokens": 846, "prompt_cached_tokens": 0, "completion_tokens": 74, "tokens_per_second": 40.9, "room": "console"}
+    06:15:22.632 DEBUG    livekit.agents     tools execution completed  
+                                         {"speech_id": "speech_7545b703e963", "room": "console"}
+    06:15:24.176 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "openai/gpt-4.1-mini", "model_provider": "livekit", "ttft": 1.15, 
+"prompt_tokens": 999, "prompt_cached_tokens": 0, "completion_tokens": 33, "tokens_per_second": 21.45, "room": "console"}
+    06:15:25.661 INFO     livekit.agents     TTS metrics  
+                                         {"model_name": "cartesia/sonic-3", "model_provider": "livekit", "ttfb": 
+0.3171400999999605, "audio_duration": 5.98, "room": "console"}
+    06:15:30.466 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "I've added 1 more Burger, 1 Coke, and 1 Chicken to
+your order. Anything else you'd like to add or should we proceed to checkout?", "room": "console"}
+    06:15:33.518 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Proceed to checkout.", "language": "en", "transcript_delay":
+0.4967610836029053, "room": "console"}
+    06:15:33.678 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.9136444926261902, "unlikely_threshold": 0.56, 
+"endpointing_delay": 0.3, "language": "en", "trigger": "stt", "from_cache": false, "room": "console"}
+    06:15:33.829 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1784690133.5188205, "last_final_transcript_time": 
+1784690133.524345, "speech_start_time": 1784690131.9169781, "delay_completed": true, "source": "stt", 
+"end_of_turn_probability": 0.9136444926261902, "unlikely_threshold": 0.56, "room": "console"}
+    06:15:33.838 DEBUG    livekit.agents     using preemptive generation  
+                                         {"preemptive_lead_time": 0.31368184089660645, "room": "console"}
+    06:15:33.842 INFO     livekit.agents     EOU metrics  
+                                         {"model_name": "turn-detector-v1", "model_provider": "livekit", 
+"end_of_utterance_delay": 0.31, "transcription_delay": 0.01, "room": "console"}
+    06:15:33.853 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "user", "text": "Proceed to checkout.", "room": "console"}
+    06:15:35.001 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "google/gemma-4-31b-it", "model_provider": "livekit", "ttft": 
+1.14, "prompt_tokens": 988, "prompt_cached_tokens": 832, "completion_tokens": 48, "tokens_per_second": 41.94, "room": 
+"console"}
+    06:15:35.081 DEBUG    livekit.agents     executing tool  
+                                         {"function": "checkout", "arguments": "{}", "speech_id": "speech_77b60356135c", 
+"room": "console"}
+    06:15:35.105 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "openai/gpt-4.1-mini", "model_provider": "livekit", "ttft": 1.52, 
+"prompt_tokens": 1043, "prompt_cached_tokens": 0, "completion_tokens": 9, "tokens_per_second": 5.7, "room": "console"}
+    06:15:35.114 DEBUG    livekit.agents     tools execution completed  
+                                         {"speech_id": "speech_77b60356135c", "room": "console"}
+    06:15:36.757 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "openai/gpt-4.1-mini", "model_provider": "livekit", "ttft": 1.18, 
+"prompt_tokens": 1118, "prompt_cached_tokens": 0, "completion_tokens": 32, "tokens_per_second": 19.53, "room": "console"}
+    06:15:38.562 INFO     livekit.agents     TTS metrics  
+                                         {"model_name": "cartesia/sonic-3", "model_provider": "livekit", "ttfb": 
+0.30864250000740867, "audio_duration": 8.16, "room": "console"}
+    06:15:45.165 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "Your order total is $28, and the estimated 
+delivery time is 25 minutes. Thank you for ordering! If you need anything else, just ask.", "room": "console"}
+    06:15:47.513 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Okay. Thank you.", "language": "en", "transcript_delay": 
+0.4904794692993164, "room": "console"}
+    06:15:47.678 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.9337269067764282, "unlikely_threshold": 0.56, 
+"endpointing_delay": 0.3, "language": "en", "trigger": "stt", "from_cache": false, "room": "console"}
+    06:15:47.820 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1784690147.513842, "last_final_transcript_time": 
+1784690147.518035, "speech_start_time": 1784690146.1176648, "delay_completed": true, "source": "stt", 
+"end_of_turn_probability": 0.9337269067764282, "unlikely_threshold": 0.56, "room": "console"}
+    06:15:47.824 DEBUG    livekit.agents     using preemptive generation  
+                                         {"preemptive_lead_time": 0.3059065341949463, "room": "console"}
+    06:15:47.826 INFO     livekit.agents     EOU metrics  
+                                         {"model_name": "turn-detector-v1", "model_provider": "livekit", 
+"end_of_utterance_delay": 0.31, "transcription_delay": 0.0, "room": "console"}
+    06:15:47.829 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "user", "text": "Okay. Thank you.", "room": "console"}
+    06:15:48.895 DEBUG    livekit.agents     executing tool  
+                                         {"function": "end_call", "arguments": "{}", "speech_id": "speech_c256475c6a2f", 
+"room": "console"}
+    06:15:48.898 DEBUG    livekit.agents     end_call tool called {"room": "console"}
+    06:15:48.902 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "google/gemma-4-31b-it", "model_provider": "livekit", "ttft": 
+1.07, "prompt_tokens": 1004, "prompt_cached_tokens": 640, "completion_tokens": 48, "tokens_per_second": 44.97, "room": 
+"console"}
+    06:15:48.927 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "openai/gpt-4.1-mini", "model_provider": "livekit", "ttft": 1.36, 
+"prompt_tokens": 1162, "prompt_cached_tokens": 1024, "completion_tokens": 10, "tokens_per_second": 7.11, "room": 
+"console"}
+    06:15:48.935 DEBUG    livekit.agents     tools execution completed  
+                                         {"speech_id": "speech_c256475c6a2f", "room": "console"}
+    06:15:50.146 INFO     livekit.agents     LLM metrics  
+                                         {"model_name": "openai/gpt-4.1-mini", "model_provider": "livekit", "ttft": 1.07, 
+"prompt_tokens": 1185, "prompt_cached_tokens": 1024, "completion_tokens": 11, "tokens_per_second": 9.17, "room": 
+"console"}
+    06:15:50.880 INFO     livekit.agents     TTS metrics  
+                                         {"model_name": "cartesia/sonic-3", "model_provider": "livekit", "ttfb": 
+0.29085679999843705, "audio_duration": 2.22, "room": "console"}
+    06:15:52.667 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "You're welcome! Have a great day! Goodbye!", 
+"room": "console"}
+    06:15:52.801 DEBUG    livekit.agents     session closed {"reason": "user_initiated", "error": null, "room": "console"}
+    06:15:52.815 DEBUG    livekit.agents     shutting down job task  
+                                         {"reason": "user_initiated", "user_initiated": true, "room": "console"}
+    06:15:52.818 INFO     basic-agent        Usage: AgentSessionUsage(model_usage=[LLMModelUsage(type='llm_usage',        
+                                             provider='livekit', model='openai/gpt-4.1-mini', input_tokens=12084,         
+                                             input_cached_tokens=2048, output_tokens=352),                                
+                                             LLMModelUsage(type='llm_usage', provider='livekit',                          
+                                             model='google/gemma-4-31b-it', input_tokens=6279, input_cached_tokens=5120,  
+                                             output_tokens=298), TTSModelUsage(type='tts_usage', provider='livekit',      
+                                             model='cartesia/sonic-3', characters_count=777,                              
+                                             audio_duration=45.183833333333354), STTModelUsage(type='stt_usage',          
+                                             provider='livekit', model='deepgram/nova-3',                                 
+                                             audio_duration=105.24999999999997),                                          
+                                             InterruptionModelUsage(type='interruption_usage', provider='livekit',        
+                                             model='adaptive interruption', total_requests=9),                            
+                                             EOTModelUsage(type='eot_usage', provider='livekit',                          
+                                             model='turn-detector-v1', total_requests=11)])                               
+                                      {"room": "console"}
+    06:15:52.826 DEBUG    livekit.agents     job exiting  
+                                         {"reason": "user_initiated", "tid": 29140, "job_id": "mock-job-c1455a41abcc", 
+"room": "console-room"}
+                 INFO     livekit.agents     deleting the room because the user ended the call {"room": "console"}
+    06:15:52.836 WARNING  livekit.agents     job_ctx.delete_room() is not executed while in console mode  
+                                         {"room": "console"}
+    06:15:52.843 DEBUG    livekit.agents     http_session(): closing the httpclient ctx  
+   Microphone Array (2- Intel® Sma   ▁ ▁ ▁ ▁ ▁ ▁ ▁ ▁ ▁ ▁ ▁ ▁ ▁ ▁                                                          
+                       end_of_turn: 306ms · turn_completed_cb: 0.00ms · llm_ttft: 1070ms · tts_ttfb: 291ms  ─  e2e: 2951ms
+                                                                                                                          
+   ? for shortcuts       
